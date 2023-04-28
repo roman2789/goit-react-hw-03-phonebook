@@ -9,7 +9,7 @@ const PHONE_NO_REGEX = /^[0-9\- ]{8,14}$/;
 const requiredSchema = Yup.object().shape({
   name: Yup.string().required(),
   number: Yup.string().matches(PHONE_NO_REGEX, {
-    message: 'please enter the valid phone number',
+    message: 'please enter the valid phone number!',
     excludeEmptyString: true,
   }),
 });
