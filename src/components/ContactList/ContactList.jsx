@@ -1,4 +1,4 @@
-import propTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import { List, Item, DelButton } from './ContactListStyled';
 
 const ContactList = ({ filteredContacts, onClickDeleteContact }) => {
@@ -22,6 +22,11 @@ const ContactList = ({ filteredContacts, onClickDeleteContact }) => {
 export default ContactList;
 
 ContactList.propTypes = {
-  filteredContacts: propTypes.arrayOf(propTypes.object).isRequired,
-  onClickDeleteContact: propTypes.func.isRequired,
+  filteredContacts: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
+    })
+  ).isRequired,
+  onClickDeleteContact: PropTypes.func.isRequired,
 };
